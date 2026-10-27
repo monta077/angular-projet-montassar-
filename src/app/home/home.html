@@ -1,0 +1,26 @@
+<p>4ssa4</p>
+<h1> Bienvenue, {{ nom }}!</h1>
+<img [src]="imgurl" alt="Angular Logo" width="200" height="200">
+<button (click)="bonjour()">Cliquez ici pour dire bonjour</button>
+<br>
+<input  [(ngModel)]="nom1" >
+<p>Bonjour {{ nom1 }}!</p>
+
+@if( nom1 =="amen"){
+    <p>Vous êtes aziz!</p>
+}
+@else{
+    <p>Vous n'êtes pas aziz!</p>
+}
+@for (s of students; track $index) {
+    {{s}}
+}
+@for (s2 of students2; track $index) {
+    {{s2.name}} ({{s2.age}})
+}
+
+
+<h1>Compteur simple: {{ count }}</h1>
+<button (click)="incrementSimple()">Incrémenter le compteur simple</button>
+<h1>Compteur signal: {{ counts() }}</h1>
+<button (click)="increment()">Incrémenter le compteur signal</button>

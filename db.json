@@ -1,0 +1,22 @@
+{
+  "conferances": [
+    {
+      "title": "Angular Day",
+      "description": "Journée de conférences",
+      "location": "ESPRIT, Ghazela",
+      "date": "2026-11-05",
+      "price": 20,
+      "nbPlaces": 1,
+      "id": 1
+    },
+    {
+      "title": "kkkkkkkkkkkkkkkkk",
+      "description": "lllllllllllllllllllllllllll",
+      "location": "kkkkkkkkkkkkkkkkkkk",
+      "date": "2026-10-28",
+      "price": 2,
+      "nbPlaces": 1,
+      "id": 2
+    }
+  ]
+}

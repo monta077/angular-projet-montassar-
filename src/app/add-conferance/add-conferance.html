@@ -1,0 +1,47 @@
+<h2>Ajouter une conférence</h2>
+
+<form [formGroup]="conferanceForm" (ngSubmit)="addConferance()">
+  <label>Titre :</label>
+  <input formControlName="title" />
+  @if (conferanceForm.controls.title.invalid && conferanceForm.controls.title.touched) {
+    <span class="error">Titre obligatoire (3 caractères min).</span>
+  }
+  <br />
+
+  <label>Description :</label>
+  <textarea formControlName="description"></textarea>
+  @if (conferanceForm.controls.description.invalid && conferanceForm.controls.description.touched) {
+    <span class="error">Description obligatoire (10 caractères min).</span>
+  }
+  <br />
+
+  <label>Lieu :</label>
+  <input formControlName="location" />
+  @if (conferanceForm.controls.location.invalid && conferanceForm.controls.location.touched) {
+    <span class="error">Lieu obligatoire.</span>
+  }
+  <br />
+
+  <label>Date :</label>
+  <input type="date" formControlName="date" />
+  @if (conferanceForm.controls.date.invalid && conferanceForm.controls.date.touched) {
+    <span class="error">Date obligatoire.</span>
+  }
+  <br />
+
+  <label>Prix :</label>
+  <input type="number" formControlName="price" />
+  @if (conferanceForm.controls.price.invalid && conferanceForm.controls.price.touched) {
+    <span class="error">Prix ≥ 0.</span>
+  }
+  <br />
+
+  <label>Nombre de places :</label>
+  <input type="number" formControlName="nbPlaces" />
+  @if (conferanceForm.controls.nbPlaces.invalid && conferanceForm.controls.nbPlaces.touched) {
+    <span class="error">Au moins 1 place.</span>
+  }
+  <br />
+
+  <button type="submit" [disabled]="conferanceForm.invalid">Ajouter</button>
+</form>

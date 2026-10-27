@@ -1,0 +1,26 @@
+<form [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <label for="username">Username:</label>
+    <input formControlName="username" >
+
+
+    @if(userForm.get('username')?.hasError('required') && userForm.get('username')?.touched) {  
+        Username is required.
+    }
+    @if(userForm.get('username')?.hasError('minlength') && userForm.get('username')?.touched) {  
+        Username must be at least 3 characters long.
+    }
+    <br>
+    <label for="email">Email:</label>
+    <input  formControlName="email" >
+    @if(userForm.get('email')?.hasError('pattern') && userForm.get('email')?.touched) {  
+        Please enter a valid email address.
+    }
+    <br>
+    <label for="password">Password:</label>
+    <input formControlName="password">
+    @if (userForm.get('password')?.hasError('minlength') && userForm.get('password')?.touched) {  
+        Password must be at least 6 characters long.
+    }
+    <button [disabled]="!userForm.valid"  type="submit">Submit</button>
+  
+</form>

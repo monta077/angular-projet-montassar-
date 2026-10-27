@@ -1,0 +1,31 @@
+<h1>Conferences</h1>
+
+<div class="toolbar">
+  <button routerLink="/add-conferance">+ Ajouter une conférence</button>
+</div>
+
+<div class="cards-container">
+  @for (conf of conferances(); track conf.id) {
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1540575467063-178a50c2df87"
+        alt="Conference"
+      />
+
+      <div class="card-content">
+        <h2>{{ conf.title }}</h2>
+        <p>📅 {{ conf.date }}</p>
+        <p>📍 {{ conf.location }}</p>
+        <p>💰 {{ conf.price }} DT — 🎟️ {{ conf.nbPlaces }} places</p>
+      </div>
+
+      <div class="actions">
+        <button [routerLink]="['/details', conf.id]">Details</button>
+        <button [routerLink]="['/update', conf.id]">Modifier</button>
+        <button class="danger" (click)="deleteConferance(conf.id)">Supprimer</button>
+      </div>
+    </div>
+  } @empty {
+    <p>Aucune conférence trouvée.</p>
+  }
+</div>

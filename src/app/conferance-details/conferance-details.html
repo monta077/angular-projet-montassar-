@@ -1,0 +1,15 @@
+<h2>Conference Details</h2>
+
+@if (conferance(); as conf) {
+  <h3>{{ conf.title }}</h3>
+  <p>{{ conf.description }}</p>
+  <p>📍 Lieu : {{ conf.location }}</p>
+  <p>📅 Date : {{ conf.date }}</p>
+  <p>💰 Prix : {{ conf.price }} DT</p>
+  <p>🎟️ Places : {{ conf.nbPlaces }}</p>
+
+  <button [routerLink]="['/update', conf.id]">Modifier</button>
+  <button routerLink="/list">Retour</button>
+} @else {
+  <p>Chargement...</p>
+}
